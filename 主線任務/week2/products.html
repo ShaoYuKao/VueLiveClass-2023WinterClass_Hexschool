@@ -46,7 +46,7 @@
                   <span v-else>未啟用</span>
                 </td>
                 <td width="120">
-                  <button type="button" class="btn btn-primary" @click="openProduct(item)">查看細節</button>
+                  <button type="button" class="btn btn-primary" @click="productDetail(item)">查看細節</button>
                 </td>
               </tr>
             </tbody>
@@ -55,24 +55,24 @@
         </div>
         <div class="col-md-6">
           <h2>單一產品細節</h2>
-          <template v-if="tempProduct.title">
+          <template v-if="product.title">
             <div class="card mb-3">
-              <img :src="tempProduct.imageUrl" class="card-img-top primary-image" alt="主圖">
+              <img :src="product.imageUrl" class="card-img-top primary-image" alt="主圖">
               <div class="card-body">
                 <h5 class="card-title">
-                  {{ tempProduct.title }}
-                  <span class="badge bg-primary ms-2">{{ tempProduct.category }}</span>
+                  {{ product.title }}
+                  <span class="badge bg-primary ms-2">{{ product.category }}</span>
                 </h5>
-                <p class="card-text">商品描述：{{ tempProduct.description }}</p>
-                <p class="card-text">商品內容：{{ tempProduct.content }}</p>
+                <p class="card-text">商品描述：{{ product.description }}</p>
+                <p class="card-text">商品內容：{{ product.content }}</p>
                 <div class="d-flex">
-                  <p class="card-text me-2">{{ tempProduct.price }}</p>
-                  <p class="card-text text-secondary"><del>{{ tempProduct.origin_price }}</del></p>
-                  元 / {{ tempProduct.unit }}
+                  <p class="card-text me-2">{{ product.price }}</p>
+                  <p class="card-text text-secondary"><del>{{ product.origin_price }}</del></p>
+                  元 / {{ product.unit }}
                 </div>
               </div>
             </div>
-            <template v-for="(image, key) in tempProduct.imagesUrl" :key="key">
+            <template v-for="(image, key) in product.imagesUrl" :key="key">
               <img v-if="image" :src="image" :alt="`商品${key}`" class="images m-2">
             </template>
           </template>

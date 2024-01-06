@@ -60,7 +60,7 @@ createApp({
       apiUrl: 'https://vue3-course-api.hexschool.io/v2',
       apiPath: '202401-vue-shaoyu',
       products: [],
-      tempProduct: {},
+      product: {},
     }
   },
   methods: {
@@ -85,8 +85,8 @@ createApp({
           alert(err.response.data.message);
         })
     },
-    openProduct(item) {
-      this.tempProduct = item;
+    productDetail(item) {
+      this.product = item;
     }
   },
   mounted() {
