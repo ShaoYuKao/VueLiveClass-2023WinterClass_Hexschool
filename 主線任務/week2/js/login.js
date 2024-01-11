@@ -19,7 +19,7 @@ createApp({
         document.cookie = `hexToken=${token};expires=${new Date(expired)}; path=/`;
         window.location = 'products.html';
       }).catch((err) => {
-        alert(err.response.data.message);
+        alert(err.data.message);
       });
     },
   },
