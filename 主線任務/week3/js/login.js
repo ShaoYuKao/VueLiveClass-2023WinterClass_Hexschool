@@ -8,12 +8,13 @@ createApp({
         username: '',
         password: '',
       },
-    }
+    };
   },
   methods: {
     login() {
-      const uri = `${this.apiUrl}/admin/signin`;
-      axios.post(uri, this.user).then((res) => {
+      const api = `${this.apiUrl}/admin/signin`;
+
+      axios.post(api, this.user).then((res) => {
         const { token, expired } = res.data;
         // 寫入 cookie token
         // expires 設置有效時間
